@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>70s premium edition</title>
+    <script type="text/javascript" src="/scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-corner.js"></script>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div style="position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);text-align: center">
+<div id="page">
+    <div id="logo">
+        <img src="/assets/img/pornolizer-trans-logo.png"/>
+    </div>
+    <div id="translate">
+
+        <?php if (isset($error)): ?>
+            <div class="error">
+                <?= htmlspecialchars($error); ?>
+            </div>
+        <?php endif; ?>
+
+        <form action="/translate" method="get">
+            <select name="lang">
+                <option selected="selected" value="en">English</option>
+                <option value="dk">Dansk</option>
+                <option value="de">Deutsch</option>
+                <option value="es">Espan&#245;l</option>
+                <option value="hr">Hrvatska</option>
+                <option value="hu">Magyar</option>
+                <option value="no">Norsk</option>
+                <option value="se">Svensk</option>
+            </select>
+            <input name="url" type="text" value="http://"/>
+            <input type="submit" value="Translate" class="button"/>
+        </form>
+    </div>
+
+    <div id="api" class="seventiesBox">
+    <h3><strong>New:</strong> API now available!<br></h3>
+    <p>A POST request to http://www.pornolize.com/api will return a plain text translation.</p>
+    <p>Request variables: <br>
+    <strong>lang</strong> - The language consisting of any of the following: <em>en,dk,de,es,hr,hu,no,se</em><br>
+    <strong>text</strong> - The text to be translated<br>
+    </p>
+    <h4>Linux CLI example</h4>
+
+    <pre>$ fortune | curl http://www.pornolize.com/api -d lang=<strong>en</strong> --data-urlencode text@-
+    </pre>
+
+    </div>
+
+    <div id="info">
+        <br/>
+        The Pornolizer - &copy; <a href='https://www.dxn.pw'>Andy Dixon</a> - Version 6 - Email:  &#097;&#106;&#100;&#105;&#120;&#111;&#110;&#048;&#050;&#056;&#051;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;<br>
+        Pornolizer szeret téged, Magyarország! &lt;3
+
+    </div>
+</div>
+</html>

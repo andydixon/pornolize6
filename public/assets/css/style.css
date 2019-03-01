@@ -1,0 +1,117 @@
+body {
+    text-align: center;
+    font-family: Arial, helvetica;
+    font-size: 14px;
+    background-color: #FF9933;
+    color: #491700;
+}
+
+#translate {
+    width: 500px;
+    border: solid 2px #491700;
+    background-color: #FFF499;
+    padding: 10px 10px 10px 10px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+#translate input {
+    margin-right: 10px;
+}
+
+#translate select {
+    margin-right: 10px;
+}
+
+.error{
+    margin: 10px 0px;
+}
+
+.button {
+    background-color: #491700;
+    color: #FFDF33;
+    font-weight: bold;
+}
+
+.link {
+    color: #000000;
+}
+
+#stats {
+    width: 550px;
+    margin-top: 20px;
+}
+
+#stats caption {
+    /*border: solid 1px #0C3251;*/
+    border-collapse: collapse;
+}
+
+#stats table {
+    border-collapse: collapse;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+#domain {
+    width: 250px;
+    float: left;
+    border: solid 2px #491700;
+}
+
+#url {
+    width: 250px;
+    float: right;
+    border: solid 2px #491700;
+    overflow: hidden;
+}
+
+.StatTable {
+    width: 100%;
+    background-color: #FFCC66;
+    table-layout: auto;
+}
+
+.StatLeft {
+    width: 200px;
+    overflow: hidden;
+}
+
+.StatRight {
+    width: 50px;
+}
+
+.header {
+    background-color: #FF3300; /*border: solid 1px #0C3251;*/
+    font-weight: bold;
+    font-size: 1.2em;
+    border-collapse: collapse;
+}
+
+.colheader {
+    background-color: #FFDF33; /*border: solid 1px #0C3251;*/ /*border-collapse: collapse;*/
+}
+
+#info {
+    clear: both;
+    margin-top: 10px;
+    font-size: 0.8em;
+}
+
+.seventiesBox{
+   /** background: #ffffcc;
+    border: 5px #70371a solid;
+    margin:10px;
+        padding: 10px;
+    **/
+    border: solid 2px #491700;
+    background-color: #FFF499;
+    padding: 10px 10px 10px 10px;
+    margin: 20px auto;
+    border-radius: 10px;
+
+    color: #70371a;
+
+    text-align: left;
+
+}
