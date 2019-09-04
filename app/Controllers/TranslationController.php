@@ -1,7 +1,5 @@
 <?php
-
 namespace Pornolizer\Controllers;
-
 use Httpful\Exception\ConnectionErrorException;
 use Pornolizer\PageRewriter\PageRewriter;
 use Pornolizer\Translators\EnglishTranslator;
@@ -13,7 +11,14 @@ class TranslationController extends Controller
     private $validLanguages = ['dk', 'de', 'en', 'es', 'hr', 'hu', 'no', 'se'];
 
     public function translate(Request $request, Response $response, array $args)
-    {
+    {    
+	//var_dump($_SERVER);die();
+	if(empty($_SESSION['pornolizer'])) {
+		header("Location: http://www.pornolize.com/");      
+		die();
+	}
+
+
         $lang = $request->getParam('lang');
         $url = $request->getParam('url');
 

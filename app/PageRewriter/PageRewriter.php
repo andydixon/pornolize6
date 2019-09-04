@@ -80,9 +80,9 @@ class PageRewriter
             $href = $c2->attr('href');
 
             if ($href[0] === '/') {
-                $c2->attr('href', $this->selfHost . '/translate?lang=' . $lang . '&url=' . $this->host . $c2->attr('href'));
+                $c2->attr('href', $this->selfHost . '/pornolize?lang=' . $lang . '&url=' . $this->host . $c2->attr('href'));
             } else {
-                $c2->attr('href', $this->selfHost . '/translate?lang=' . $lang . '&url=' . $c2->attr('href'));
+                $c2->attr('href', $this->selfHost . '/pornolize?lang=' . $lang . '&url=' . $c2->attr('href'));
             }
 
             return $c2;

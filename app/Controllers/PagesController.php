@@ -9,6 +9,7 @@ class PagesController extends Controller
 {
     public function home(Request $request, Response $response, array $args)
     {
-        return $this->app->renderer->render($response, 'index.phtml', $args);
+	    $_SESSION['pornolizer']=sha1(date('U').microtime(true));    
+	    return $this->app->renderer->render($response, 'index.phtml', $args);
     }
 }
