@@ -1,0 +1,16 @@
+{
+    "server": false,
+    "datacenter": "DXN-DE-DC",
+    "data_dir": "/var/consul",
+    "leave_on_terminate": true,
+    "start_join": [
+        "172.17.0.1"
+    ],
+    "service": {
+	    "name": "pornolizer",
+	    "tags": ["apache2","PHP7"],
+	    "meta": {
+	      "meta": "Apache2"
+	    }
+    }
+}
