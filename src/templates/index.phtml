@@ -1,26 +1,128 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>70s premium edition</title>
-    <script type="text/javascript" src="/scripts/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="/scripts/jquery-corner.js"></script>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Satisfy);
+    @import url(https://fonts.googleapis.com/css?family=Six+Caps);
 
-    <link rel="stylesheet" href="/assets/css/style.css">
+    body {
+        background: url(/noise.png);
+        text-align: center;
+    }
+
+    .halo {
+        background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.6));
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        pointer-events: none;
+    }
+
+    .intro {
+        color: rgb(230, 200, 160);
+        display: block;
+        font-family: 'Satisfy', cursive;
+        font-size: 32px;
+        text-shadow: 1px 1px black;
+        transform: rotate(-10deg);
+    }
+
+    .intro--the {
+        transform: rotate(-10deg) translate(-20px, 15px);
+    }
+
+    .intro--num {
+        background: rgb(240, 200, 160);
+        border: 1px dotted rgb(20, 60, 80);
+        color: rgb(20, 60, 80);
+        display: inline-block;
+        font-family: sans-serif;
+        font-size: 12px;
+        font-weight: bolder;
+        padding: 4px 6px 2px;
+        position: absolute;
+        text-shadow: none;
+        transform: rotate(-10deg) translate(20px, -25px);
+    }
+
+    .vintage__container {
+        display: inline-block;
+        margin: 25px auto 40px;
+    }
+
+    .vintage {
+        font-family: 'Six Caps', sans-serif;
+        font-size: 192px;
+        letter-spacing: 10px;
+        line-height: 1;
+        margin: 0;
+        position: relative;
+    }
+
+    .vintage__top {
+        background: linear-gradient(rgb(240, 220, 200), rgb(230, 200, 160));
+        -webkit-background-clip: text;
+        background-clip: text;
+        position: absolute;
+        z-index: 1;
+        -webkit-text-fill-color: transparent;
+        text-fill-color: transparent;
+    }
+
+    .vintage__bot {
+        text-shadow:
+                2px 1px rgb(85, 10, 0),
+                4px 2px rgb(90, 15, 5),
+                6px 4px rgb(100, 20, 15),
+                8px 5px rgb(105, 25, 20),
+                10px 6px rgb(110, 30, 25),
+                12px 7px rgb(115, 30, 30),
+                14px 8px rgb(120, 30, 35),
+                16px 9px black,
+                18px 10px black,
+                20px 11px black,
+                22px 12px black,
+                24px 13px black,
+                28px 14px rgba(0, 0, 0, 0.9),
+                30px 15px rgba(0, 0, 0, 0.7),
+                32px 16px rgba(0, 0, 0, 0.5),
+                34px 17px rgba(0, 0, 0, 0.3),
+                36px 18px rgba(0, 0, 0, 0.1),
+                40px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .outro {
+        color: white;
+        font-family: 'Satisfy', cursive;
+        font-size: 16px;
+    }
+
+    .outro--big {
+        font-family: sans-serif;
+        font-size: 24px;
+    }
+
+    .outro--smart {
+        display: block;
+    }
+</style>
+    <title>The Pornolizer: The Original Digital Sin</title>
 </head>
 <body>
-<div style="position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);text-align: center">
-<div id="page">
-    <div id="logo">
-        <img src="/assets/img/pornolizer-trans-logo.png"/>
-    </div>
-    <div id="translate">
+<div class="halo"></div>
 
-        <?php if (isset($error)): ?>
-            <div class="error">
-                <?= htmlspecialchars($error); ?>
-            </div>
-        <?php endif; ?>
-<!--	<center>Unfortunately page translations have been disabled due to dickheadery.<br>Back soon</center> -->
+<div style="position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);text-align: center">
+    <div>
+        <span class="intro intro--the">The</span>
+        <span class="intro">Original Digital Sin</span>
+    </div>
+    <div class="vintage__container">
+        <p class="vintage vintage__top">PORNOLIZER</p>
+        <p class="vintage vintage__bot">PORNOLIZER</p>
+    </div>
+    <div>
         <form action="/pornolize" method="get">
             <select name="lang">
                 <option selected="selected" value="en">English</option>
@@ -34,28 +136,10 @@
             </select>
             <input name="url" type="text" value="http://"/>
             <input type="submit" value="Translate" class="button" />
-        </form> 
+        </form>
     </div>
-
-    <div id="api" class="seventiesBox">
-    <h3><strong>New:</strong> API now available!<br></h3>
-    <p>A POST request to http://www.pornolize.com/api will return a plain text translation.</p>
-    <p>Request variables: <br>
-    <strong>lang</strong> - The language consisting of any of the following: <em>en,dk,de,es,hr,hu,no,se</em><br>
-    <strong>text</strong> - The text to be translated<br>
-    </p>
-    <h4>Linux CLI example</h4>
-
-    <pre>$ fortune | curl http://www.pornolize.com/api -d lang=<strong>en</strong> --data-urlencode text@-
-    </pre>
-
-    </div>
-
-    <div id="info">
-        <br/>
-        The Pornolizer - &copy; <a href='https://www.dxn.pw'>Andy Dixon</a> - Version 6 - Email:  &#097;&#106;&#100;&#105;&#120;&#111;&#110;&#048;&#050;&#056;&#051;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;<br>
-        Pornolizer szeret téged, Magyarország! &lt;3
-
+    <div>
+        <span class="outro">&copy;2020 Andy Dixon - <a href="https://dxn.pw" style="color:#ffffff;text-decoration:none;font-weight: bold">dxn.pw</a></span>
     </div>
 </div>
-</html>
+</body>
